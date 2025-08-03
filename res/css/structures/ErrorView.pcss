@@ -14,31 +14,39 @@ Please see LICENSE files in the repository root for full details.
         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol";
     text-align: center;
-    color: var(--cpd-color-text-primary);
+    color: white;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
     overflow: auto;
-    padding: var(--cpd-space-20x);
+    padding: var(--cpd-space-8x);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    background-color: var(--cpd-color-theme-bg);
-    background-image: url("../../themes/element/img/compound/fade-arc-light.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-color: #1B1E43;
+    background-image: none;
+    position: relative;
 
     .mx_ErrorView_logo {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto var(--cpd-space-6x);
+        max-width: 200px;
+        height: auto;
     }
 
     .mx_ErrorView_container {
         max-width: var(--width);
         margin: 0 auto var(--cpd-space-8x);
+        z-index: 2;
+        position: relative;
     }
 
     h1,
     h2 {
-        color: var(--cpd-color-text-primary);
+        color: white;
     }
 
     h2 {
@@ -47,7 +55,7 @@ Please see LICENSE files in the repository root for full details.
     }
 
     p {
-        color: var(--cpd-color-text-secondary);
+        color: rgba(255, 255, 255, 0.8);
     }
 
     .mx_ErrorView_flexContainer {
@@ -59,5 +67,91 @@ Please see LICENSE files in the repository root for full details.
 
     .mx_ErrorView_buttons {
         margin-top: var(--cpd-space-6x);
+    }
+
+    /* Imagen animada de la mujer */
+    .mx_ErrorView_woman {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        max-width: 300px;
+        height: auto;
+        opacity: 0.7;
+        z-index: 1;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+        .mx_ErrorView {
+            padding: var(--cpd-space-4x);
+            height: 100vh;
+        }
+
+        .mx_ErrorView_logo {
+            max-width: 150px;
+            margin-bottom: var(--cpd-space-4x);
+        }
+
+        .mx_ErrorView_container {
+            --width: 90vw;
+            max-width: 400px;
+        }
+
+        .mx_ErrorView_woman {
+            max-width: 200px;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.5;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .mx_ErrorView {
+            padding: var(--cpd-space-2x);
+        }
+
+        .mx_ErrorView_logo {
+            max-width: 120px;
+        }
+
+        .mx_ErrorView_container {
+            --width: 95vw;
+        }
+
+        .mx_ErrorView_woman {
+            max-width: 150px;
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            font-size: 0.85rem;
+        }
+    }
+
+    /* Vertical centering for all screen sizes */
+    @media screen and (min-height: 600px) {
+        .mx_ErrorView {
+            justify-content: center;
+            align-items: center;
+        }
     }
 }

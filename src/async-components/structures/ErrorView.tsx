@@ -33,9 +33,9 @@ export const ErrorView: React.FC<IProps> = ({ title, messages, footer, children 
         <div className="mx_ErrorView cpd-theme-light">
             <img
                 className="mx_ErrorView_logo"
-                height="160"
-                src="themes/element/img/logos/element-app-logo.png"
-                alt="Element"
+                height="120"
+                src="themes/element/img/logos/bmp-app-logo.svg"
+                alt="BMP"
             />
             <div className="mx_ErrorView_container">
                 <Heading size="md" weight="semibold">
@@ -49,6 +49,15 @@ export const ErrorView: React.FC<IProps> = ({ title, messages, footer, children 
                 {children}
             </div>
             {footer}
+            {/* Imagen animada de la mujer - aparece solo en errores de configuración */}
+            {title.includes("mal configurada") || title.includes("misconfigured") ? (
+                <img
+                    className="mx_ErrorView_woman"
+                    src="themes/element/img/backgrounds/woman_B 2.svg"
+                    alt="Ilustración decorativa"
+                    loading="lazy"
+                />
+            ) : null}
         </div>
     );
 };
