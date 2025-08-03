@@ -64,11 +64,15 @@ export default class AuthPage extends React.PureComponent<React.PropsWithChildre
 
         return (
             <div className="mx_AuthPage" style={pageStyle}>
-                <div className="mx_AuthPage_modal" style={modalStyle}>
-                    <div className="mx_AuthPage_modalBlur" style={blurStyle} />
-                    <div className="mx_AuthPage_modalContent" style={modalContentStyle}>
-                        {this.props.children}
+                <div className="mx_AuthPage_container">
+                    <div className="mx_AuthPage_modal" style={modalStyle}>
+                        <div className="mx_AuthPage_modalBlur" style={blurStyle} />
+                        <div className="mx_AuthPage_modalContent" style={modalContentStyle}>
+                            {this.props.children}
+                        </div>
                     </div>
+                    
+                    <AuthFooter />
                 </div>
                 
                 {/* Imagen flotante decorativa */}
@@ -80,8 +84,6 @@ export default class AuthPage extends React.PureComponent<React.PropsWithChildre
                         loading="lazy"
                     />
                 </div>
-                
-                <AuthFooter />
             </div>
         );
     }
