@@ -128,6 +128,7 @@
         min-width: 180px;
         background-repeat: no-repeat;
         background-position: 15px center;
+        background-size: 18px 18px;
         text-decoration: none;
         color: #ffffff !important;
         font-weight: 600;
@@ -135,6 +136,8 @@
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
     }
 
     .mx_ButtonParent:hover {
@@ -186,25 +189,27 @@
 
 
     .mx_ButtonSignIn {
-        background: linear-gradient(135deg, #368bd6, #4a9de9);
+        background: linear-gradient(135deg, #368bd6, #4a9de9) !important;
         color: white !important;
-        border: 2px solid #368bd6;
+        border: 2px solid #368bd6 !important;
     }
 
     .mx_ButtonSignIn:hover {
-        background: linear-gradient(135deg, #4a9de9, #368bd6);
-        border-color: #4a9de9;
+        background: linear-gradient(135deg, #4a9de9, #368bd6) !important;
+        border-color: #4a9de9 !important;
+        transform: translateY(-2px);
     }
 
     .mx_ButtonCreateAccount {
-        background: linear-gradient(135deg, #0dbd8b, #1dd1a1);
+        background: linear-gradient(135deg, #0dbd8b, #1dd1a1) !important;
         color: white !important;
-        border: 2px solid #0dbd8b;
+        border: 2px solid #0dbd8b !important;
     }
 
     .mx_ButtonCreateAccount:hover {
-        background: linear-gradient(135deg, #1dd1a1, #0dbd8b);
-        border-color: #1dd1a1;
+        background: linear-gradient(135deg, #1dd1a1, #0dbd8b) !important;
+        border-color: #1dd1a1 !important;
+        transform: translateY(-2px);
     }
 
     .mx_SecondaryButton {
