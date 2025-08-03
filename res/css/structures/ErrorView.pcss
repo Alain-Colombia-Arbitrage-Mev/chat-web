@@ -69,15 +69,25 @@ Please see LICENSE files in the repository root for full details.
         margin-top: var(--cpd-space-6x);
     }
 
+    /* Contenedor de la imagen animada - fuera del formulario */
+    .mx_ErrorView_woman_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: var(--cpd-space-6x) auto var(--cpd-space-4x);
+        z-index: 1;
+        position: relative;
+    }
+
     /* Imagen animada de la mujer - aparece debajo del mensaje específico */
     .mx_ErrorView_woman_inline {
         display: block;
-        margin: var(--cpd-space-4x) auto;
         max-width: 180px;
         width: 90%;
         height: auto;
         opacity: 0;
         animation: slideUpFadeIn 1.5s ease-out forwards;
+        filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
     }
 
     @keyframes slideUpFadeIn {
@@ -108,6 +118,10 @@ Please see LICENSE files in the repository root for full details.
             max-width: 400px;
         }
 
+        .mx_ErrorView_woman_container {
+            margin: var(--cpd-space-4x) auto var(--cpd-space-3x);
+        }
+
         .mx_ErrorView_woman_inline {
             max-width: 140px;
             width: 80%;
@@ -133,6 +147,10 @@ Please see LICENSE files in the repository root for full details.
 
         .mx_ErrorView_container {
             --width: 95vw;
+        }
+
+        .mx_ErrorView_woman_container {
+            margin: var(--cpd-space-3x) auto var(--cpd-space-2x);
         }
 
         .mx_ErrorView_woman_inline {

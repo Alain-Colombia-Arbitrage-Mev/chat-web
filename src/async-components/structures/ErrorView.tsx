@@ -29,6 +29,11 @@ interface IProps {
 }
 
 export const ErrorView: React.FC<IProps> = ({ title, messages, footer, children }) => {
+    // Verificar si algún mensaje incluye el texto específico para mostrar la imagen
+    const shouldShowAnimatedImage = messages?.some(message => 
+        message.includes("Configuración errónea: no se ha especificado servidor")
+    );
+
     return (
         <div className="mx_ErrorView cpd-theme-light">
             <img
@@ -46,19 +51,23 @@ export const ErrorView: React.FC<IProps> = ({ title, messages, footer, children 
                         <Text size="lg">
                             {message}
                         </Text>
-                        {/* Mostrar imagen animada específicamente después del mensaje de servidor no especificado */}
-                        {message.includes("Configuración errónea: no se ha especificado servidor") && (
-                            <img
-                                className="mx_ErrorView_woman_inline"
-                                src="themes/element/img/backgrounds/woman_B 2.svg"
-                                alt="Ilustración decorativa"
-                                loading="lazy"
-                            />
-                        )}
                     </div>
                 ))}
                 {children}
             </div>
+            
+            {/* Imagen animada fuera del contenedor del formulario */}
+            {shouldShowAnimatedImage && (
+                <div className="mx_ErrorView_woman_container">
+                    <img
+                        className="mx_ErrorView_woman_inline"
+                        src="themes/element/img/backgrounds/woman_B 2.svg"
+                        alt="Ilustración decorativa"
+                        loading="lazy"
+                    />
+                </div>
+            )}
+            
             {footer}
 
         </div>
