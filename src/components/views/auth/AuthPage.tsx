@@ -70,6 +70,17 @@ export default class AuthPage extends React.PureComponent<React.PropsWithChildre
                         {this.props.children}
                     </div>
                 </div>
+                
+                {/* Imagen flotante decorativa */}
+                <div className="mx_AuthPage_floatingImage">
+                    <img 
+                        src="themes/element/img/backgrounds/image.svg" 
+                        alt="Ilustración decorativa" 
+                        className="mx_AuthPage_floatingImage_svg"
+                        loading="lazy"
+                    />
+                </div>
+                
                 <AuthFooter />
             </div>
         );

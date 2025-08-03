@@ -30,3 +30,81 @@ Please see LICENSE files in the repository root for full details.
         margin-top: 0;
     }
 }
+
+/* Imagen flotante decorativa */
+.mx_AuthPage_floatingImage {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    animation: authFloatIn 2.5s ease-out 1.5s forwards;
+}
+
+.mx_AuthPage_floatingImage_svg {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.25));
+    animation: authGentleFloat 7s ease-in-out infinite;
+}
+
+@keyframes authFloatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) translateX(40px) scale(0.8);
+    }
+    100% {
+        opacity: 0.8;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+}
+
+@keyframes authGentleFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+}
+
+/* Responsive design para imagen flotante */
+@media only screen and (max-width: 768px) {
+    .mx_AuthPage_floatingImage {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .mx_AuthPage_floatingImage_svg {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .mx_AuthPage_floatingImage {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .mx_AuthPage_floatingImage_svg {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .mx_AuthPage_floatingImage {
+        bottom: 12px;
+        right: 12px;
+    }
+
+    .mx_AuthPage_floatingImage_svg {
+        width: 100px;
+    }
+}
