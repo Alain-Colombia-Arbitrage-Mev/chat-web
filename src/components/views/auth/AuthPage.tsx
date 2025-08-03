@@ -58,7 +58,7 @@ export default class AuthPage extends React.PureComponent<React.PropsWithChildre
         const modalContentStyle: React.CSSProperties = {
             display: "flex",
             zIndex: 1,
-            background: "rgba(255, 255, 255, 0.59)",
+            background: "rgba(255, 255, 255, 1)",
             borderRadius: "8px",
         };
 
