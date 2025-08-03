@@ -7,45 +7,66 @@ Please see LICENSE files in the repository root for full details.
 
 .mx_AuthPage {
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: $authpage-bg-color;
     height: 100vh;
     overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .mx_AuthPage_modal {
     display: flex;
-    margin: auto;
+    margin: 0;
     border-radius: 8px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
     background-color: $authpage-modal-bg-color;
     max-width: 800px;
     width: 90%;
+}
 
-    @media only screen and (max-height: 768px) {
-        margin: 20px auto;
+@media only screen and (max-height: 768px) {
+    .mx_AuthPage_modal {
+        margin: 0;
         width: 95%;
     }
+}
 
-    @media only screen and (max-width: 768px) {
-        margin: 15px auto;
+@media only screen and (max-width: 768px) {
+    .mx_AuthPage {
+        padding: 15px;
+    }
+
+    .mx_AuthPage_modal {
+        margin: 0;
         width: 95%;
         max-width: 600px;
     }
+}
 
-    @media only screen and (max-width: 480px) {
-        margin: 10px auto;
+@media only screen and (max-width: 480px) {
+    .mx_AuthPage {
+        padding: 10px;
+    }
+
+    .mx_AuthPage_modal {
+        margin: 0;
         width: 98%;
         max-width: none;
         border-radius: 12px;
     }
+}
 
-    @media only screen and (max-width: 320px) {
-        margin: 5px auto;
+@media only screen and (max-width: 320px) {
+    .mx_AuthPage {
+        padding: 8px;
+    }
+
+    .mx_AuthPage_modal {
+        margin: 0;
         width: 100%;
         border-radius: 8px;
     }
@@ -63,7 +84,7 @@ Please see LICENSE files in the repository root for full details.
 }
 
 .mx_AuthPage_floatingImage_svg {
-    width: 100px;
+    width: 200px;
     height: auto;
     filter: drop-shadow(0 3px 15px rgba(0, 0, 0, 0.3));
     animation: authGentleFloat 4s ease-in-out infinite;
@@ -104,7 +125,7 @@ Please see LICENSE files in the repository root for full details.
     }
 
     .mx_AuthPage_floatingImage_svg {
-        width: 80px;
+        width: 150px;
     }
 }
 
@@ -115,7 +136,7 @@ Please see LICENSE files in the repository root for full details.
     }
 
     .mx_AuthPage_floatingImage_svg {
-        width: 70px;
+        width: 120px;
     }
 }
 
@@ -126,6 +147,6 @@ Please see LICENSE files in the repository root for full details.
     }
 
     .mx_AuthPage_floatingImage_svg {
-        width: 60px;
+        width: 100px;
     }
 }
