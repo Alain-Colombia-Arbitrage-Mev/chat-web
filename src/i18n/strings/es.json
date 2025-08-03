@@ -894,7 +894,7 @@
         "invalid_json_detail": "El mensaje del parser es: %(message)s",
         "invalid_json_generic": "JSON inválido",
         "mau": "Este servidor base ha alcanzado su límite mensual de usuarios activos.",
-        "misconfigured": "Tu aplicación \"BMP\" está mal configurada",
+        "misconfigured": "Tu aplicación BMP está mal configurada",
         "mixed_content": "No se ha podido conectar al servidor base a través de HTTP, cuando es necesario un enlace HTTPS en la barra de direcciones de tu navegador. Ya sea usando HTTPS o <a>activando los scripts inseguros</a>.",
         "non_urgent_echo_failure_toast": "Tú servidor no esta respondiendo a ciertas <a>solicitudes</a>.",
         "resource_limits": "Este servidor base ha excedido uno de sus límites de recursos.",
