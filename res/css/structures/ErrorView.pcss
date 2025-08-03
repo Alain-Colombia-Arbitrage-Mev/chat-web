@@ -69,22 +69,25 @@ Please see LICENSE files in the repository root for full details.
         margin-top: var(--cpd-space-6x);
     }
 
-    /* Imagen animada de la mujer */
-    .mx_ErrorView_woman {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        max-width: 300px;
+    /* Imagen animada de la mujer - aparece debajo del mensaje específico */
+    .mx_ErrorView_woman_inline {
+        display: block;
+        margin: var(--cpd-space-4x) auto;
+        max-width: 250px;
         height: auto;
-        opacity: 0.7;
-        z-index: 1;
-        animation: float 6s ease-in-out infinite;
+        opacity: 0;
+        animation: slideUpFadeIn 1.5s ease-out forwards;
     }
 
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0px); }
+    @keyframes slideUpFadeIn {
+        0% { 
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        100% { 
+            transform: translateY(0);
+            opacity: 0.8;
+        }
     }
 
     /* Responsive design */
@@ -104,11 +107,8 @@ Please see LICENSE files in the repository root for full details.
             max-width: 400px;
         }
 
-        .mx_ErrorView_woman {
+        .mx_ErrorView_woman_inline {
             max-width: 200px;
-            bottom: 10px;
-            right: 10px;
-            opacity: 0.5;
         }
 
         h1 {
@@ -133,9 +133,8 @@ Please see LICENSE files in the repository root for full details.
             --width: 95vw;
         }
 
-        .mx_ErrorView_woman {
+        .mx_ErrorView_woman_inline {
             max-width: 150px;
-            opacity: 0.3;
         }
 
         h1 {
