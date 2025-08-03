@@ -183,33 +183,7 @@
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
-    /* Contenedor y imagen animada */
-    .mx_ErrorView_woman_container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 30px 0;
-        width: 100%;
-    }
 
-    .mx_ErrorView_woman_inline {
-        display: block;
-        max-width: 200px;
-        height: auto;
-        opacity: 0;
-        animation: slideUpFadeIn 1.5s ease-out 0.5s forwards;
-    }
-
-    @keyframes slideUpFadeIn {
-        0% { 
-            transform: translateY(50px);
-            opacity: 0;
-        }
-        100% { 
-            transform: translateY(0);
-            opacity: 0.7;
-        }
-    }
 
     .mx_ButtonSignIn {
         background: linear-gradient(135deg, #368bd6, #4a9de9);
@@ -234,16 +208,16 @@
     }
 
     .mx_SecondaryButton {
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff !important;
-        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: rgba(27, 30, 67, 0.1);
+        color: #1B1E43 !important;
+        border: 2px solid rgba(27, 30, 67, 0.3);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
 
     .mx_SecondaryButton:hover {
-        background: rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(27, 30, 67, 0.2);
+        border-color: rgba(27, 30, 67, 0.5);
     }
 
     .mx_Button_iconSignIn {
@@ -392,17 +366,6 @@ we don't have an account and should hide them. No account == no guest account ei
     <!-- XXX: Our translations system isn't smart enough to recognize variables in the HTML, so we manually do it -->
     <h4 class="mx_Header_subtitle">_t("powered_by_matrix_with_logo")</h4>
     <p class="mx_Header_description">_t("secure_messaging_description")</p>
-    
-    <!-- Imagen animada que aparece debajo del mensaje de configuración errónea -->
-    <div class="mx_ErrorView_woman_container">
-        <img 
-            class="mx_ErrorView_woman_inline" 
-            src="themes/element/img/backgrounds/image.svg" 
-            alt="Ilustración decorativa"
-            loading="lazy"
-        />
-    </div>
-    
     <div class="mx_ButtonGroup">
         <div class="mx_ButtonRow">
             <a href="#/login" class="mx_ButtonParent mx_ButtonSignIn mx_Button_iconSignIn">

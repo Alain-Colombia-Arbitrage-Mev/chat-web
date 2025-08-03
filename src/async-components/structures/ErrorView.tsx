@@ -50,7 +50,7 @@ export const ErrorView: React.FC<IProps> = ({ title, messages, footer, children 
                         {message.includes("Configuración errónea: no se ha especificado servidor") && (
                             <img
                                 className="mx_ErrorView_woman_inline"
-                                src="themes/element/img/backgrounds/woman_B 2.svg"
+                                src="themes/element/img/backgrounds/image.svg"
                                 alt="Ilustración decorativa"
                                 loading="lazy"
                             />
