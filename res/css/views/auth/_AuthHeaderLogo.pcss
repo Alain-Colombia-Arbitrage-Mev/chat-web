@@ -6,13 +6,18 @@ Please see LICENSE files in the repository root for full details.
 */
 
 .mx_AuthHeaderLogo {
-    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
     padding: 0 25px;
+    margin: 0;
 }
 
 .mx_AuthHeaderLogo img {
-    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
 }
 
 @media only screen and (max-width: 480px) {
