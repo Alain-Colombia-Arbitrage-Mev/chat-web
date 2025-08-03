@@ -243,6 +243,44 @@ we don't have an account and should hide them. No account == no guest account ei
         margin: 0 auto;
     }
 
+    /* Imagen flotante decorativa */
+    .mx_FloatingImage {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0;
+        animation: floatIn 2s ease-out 1s forwards;
+    }
+
+    .mx_FloatingImage_svg {
+        width: 120px;
+        height: auto;
+        filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+        animation: gentleFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes floatIn {
+        0% {
+            opacity: 0;
+            transform: translateY(30px) translateX(30px);
+        }
+        100% {
+            opacity: 0.7;
+            transform: translateY(0) translateX(0);
+        }
+    }
+
+    @keyframes gentleFloat {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
     /* Responsive Styles */
     @media only screen and (max-width: 768px) {
         html, body {
@@ -289,6 +327,16 @@ we don't have an account and should hide them. No account == no guest account ei
             width: 100%;
             max-width: 280px;
         }
+
+        /* Imagen flotante responsive para tablets */
+        .mx_FloatingImage {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .mx_FloatingImage_svg {
+            width: 100px;
+        }
     }
 
     @media only screen and (max-width: 480px) {
@@ -329,6 +377,16 @@ we don't have an account and should hide them. No account == no guest account ei
         .mx_ButtonLabel {
             margin-left: 15px;
         }
+
+        /* Imagen flotante responsive para móviles */
+        .mx_FloatingImage {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .mx_FloatingImage_svg {
+            width: 80px;
+        }
     }
 
     @media only screen and (max-width: 320px) {
@@ -348,6 +406,16 @@ we don't have an account and should hide them. No account == no guest account ei
             min-width: 120px;
             padding: 8px 12px;
             font-size: 12px;
+        }
+
+        /* Imagen flotante responsive para pantallas muy pequeñas */
+        .mx_FloatingImage {
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .mx_FloatingImage_svg {
+            width: 60px;
         }
     }
 </style>
@@ -377,4 +445,14 @@ we don't have an account and should hide them. No account == no guest account ei
             </div>
         </div>
     </div>
+</div>
+
+<!-- Imagen flotante decorativa -->
+<div class="mx_FloatingImage">
+    <img 
+        src="themes/element/img/backgrounds/image.svg" 
+        alt="Ilustración decorativa" 
+        class="mx_FloatingImage_svg"
+        loading="lazy"
+    />
 </div>
