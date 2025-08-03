@@ -8,12 +8,13 @@ Please see LICENSE files in the repository root for full details.
 */
 
 .mx_AuthBody {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     font-size: $font-12px;
     color: $authpage-secondary-color;
     background-color: $background;
-    border-radius: 0 4px 4px 0;
-    padding: 25px 60px;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 40px;
     box-sizing: border-box;
 
     strong {
@@ -26,9 +27,10 @@ Please see LICENSE files in the repository root for full details.
     }
 
     h1 {
-        font-size: $font-24px;
+        font-size: $font-20px;
         font-weight: var(--cpd-font-weight-semibold);
-        margin-top: $spacing-8;
+        margin-top: $spacing-4;
+        margin-bottom: $spacing-12;
         color: $authpage-primary-color;
     }
 
@@ -267,11 +269,40 @@ Please see LICENSE files in the repository root for full details.
     margin: 1em 0;
 }
 
+@media only screen and (max-width: 768px) {
+    .mx_AuthBody {
+        padding: 20px 30px;
+        max-width: 450px;
+    }
+
+    .mx_AuthBody h1 {
+        font-size: $font-18px;
+        margin-bottom: $spacing-8;
+    }
+}
+
 @media only screen and (max-width: 480px) {
     .mx_AuthBody {
-        border-radius: 4px;
-        width: auto;
-        max-width: 500px;
-        padding: 10px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: none;
+        padding: 15px 20px;
+    }
+
+    .mx_AuthBody h1 {
+        font-size: $font-16px;
+        margin-top: $spacing-2;
+        margin-bottom: $spacing-8;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .mx_AuthBody {
+        padding: 12px 15px;
+        border-radius: 8px;
+    }
+
+    .mx_AuthBody h1 {
+        font-size: $font-15px;
     }
 }

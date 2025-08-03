@@ -38,6 +38,7 @@ import RegistrationForm from "../../views/auth/RegistrationForm";
 import AccessibleButton, { type ButtonEvent } from "../../views/elements/AccessibleButton";
 import AuthBody from "../../views/auth/AuthBody";
 import AuthHeader from "../../views/auth/AuthHeader";
+import SdkConfig from "../../../SdkConfig";
 import InteractiveAuth, { type InteractiveAuthCallback } from "../InteractiveAuth";
 import Spinner from "../../views/elements/Spinner";
 import { AuthHeaderDisplay } from "./header/AuthHeaderDisplay";
@@ -741,14 +742,16 @@ export default class Registration extends React.Component<IProps, IState> {
                         <AuthHeaderDisplay
                             title={_t("auth|create_account_title")}
                             serverPicker={
-                                <ServerPicker
-                                    title={_t("auth|server_picker_title_registration")}
-                                    dialogTitle={_t("auth|server_picker_dialog_title")}
-                                    serverConfig={this.props.serverConfig}
-                                    onServerConfigChange={
-                                        this.state.doingUIAuth ? undefined : this.props.onServerConfigChange
-                                    }
-                                />
+                                !SdkConfig.get("disable_custom_urls") ? (
+                                    <ServerPicker
+                                        title={_t("auth|server_picker_title_registration")}
+                                        dialogTitle={_t("auth|server_picker_dialog_title")}
+                                        serverConfig={this.props.serverConfig}
+                                        onServerConfigChange={
+                                            this.state.doingUIAuth ? undefined : this.props.onServerConfigChange
+                                        }
+                                    />
+                                ) : undefined
                             }
                         >
                             {errorText}

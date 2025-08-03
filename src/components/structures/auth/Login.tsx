@@ -28,6 +28,7 @@ import ServerPicker from "../../views/elements/ServerPicker";
 import AuthBody from "../../views/auth/AuthBody";
 import AuthHeader from "../../views/auth/AuthHeader";
 import AccessibleButton, { type ButtonEvent } from "../../views/elements/AccessibleButton";
+import SdkConfig from "../../../SdkConfig";
 import { type ValidatedServerConfig } from "../../../utils/ValidatedServerConfig";
 import { filterBoolean } from "../../../utils/arrays";
 import { startOidcLogin } from "../../../utils/oidc/authorize";
@@ -538,11 +539,13 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
                     </h1>
                     {errorTextSection}
                     {serverDeadSection}
-                    <ServerPicker
-                        serverConfig={this.props.serverConfig}
-                        onServerConfigChange={this.props.onServerConfigChange}
-                        disabled={this.isBusy()}
-                    />
+                    {!SdkConfig.get("disable_custom_urls") && (
+                        <ServerPicker
+                            serverConfig={this.props.serverConfig}
+                            onServerConfigChange={this.props.onServerConfigChange}
+                            disabled={this.isBusy()}
+                        />
+                    )}
                     {this.renderLoginComponentForFlows()}
                     {footer}
                 </AuthBody>
